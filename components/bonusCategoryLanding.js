@@ -1,22 +1,30 @@
 import React, { createContext, useContext, useReducer } from "react";
+import { AddKpi } from "./addKpi";
+import { AddTarget } from "./addTarget";
 
 export const BonusFormContext = createContext({});
 
-const InitialFormState = {
-  target = '',
-  sales = '',
-  totalCalls = '',
-  appsConverted = '',
-  freeCalls = '',
-  nps = ''
-}
+// const InitialFormState = {
+//   target = '',
+//   sales = '',
+//   totalCalls = '',
+//   appsConverted = '',
+//   freeCalls = '',
+//   nps = ''
+// }
 
 export function BonusCategoryLanding() {
-  const [formState, dispatch] = useReducer(reducer, InitialFormState)
-  
-  const stateData = useContext(BonusFormContext)
+  // const [formState, dispatch] = useReducer(reducer, InitialFormState);
 
+  const stateData = useContext(BonusFormContext);
 
+  return (
+    <>
+      <h2>Here is the calculator</h2>
+      <AddKpi />
+      <AddTarget />
+    </>
+  );
 }
 
 function reducer(state, action) {
