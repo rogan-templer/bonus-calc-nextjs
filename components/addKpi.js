@@ -4,7 +4,7 @@ import { Input } from "semantic-ui-react";
 export function AddKpi() {
   return (
     <>
-      <h2>KPI Component</h2>
+      <p>KPI Component</p>
       <Input placeholder="Input KPI here" />
     </>
   );

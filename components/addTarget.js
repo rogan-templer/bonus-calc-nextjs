@@ -4,7 +4,7 @@ import { Input } from "semantic-ui-react";
 export function AddTarget() {
   return (
     <>
-      <h2>Target Component</h2>
+      <p>Target Component</p>
       <Input placeholder="Input target here" />
     </>
   );
