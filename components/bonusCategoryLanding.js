@@ -26,7 +26,7 @@ export function BonusCategoryLanding() {
         <div className="flex flex-align-justify ">
           <div>
             <label>Sales KPI</label>
-            <AddKpi />
+            <AddKpi formState={formState} />
             <AddTarget />
           </div>
           <div>
