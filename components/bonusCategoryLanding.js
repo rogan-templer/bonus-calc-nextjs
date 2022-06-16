@@ -8,6 +8,7 @@ import { Nps } from "./kpis/nps";
 import { Form } from "semantic-ui-react";
 
 import { DISPATCH_ACTION } from "./constants";
+import { Results } from "./consolidatedResults/results";
 
 export const BonusFormContext = createContext({});
 
@@ -46,6 +47,7 @@ export function BonusCategoryLanding() {
           </div>
           <div>
             <h2>Consolidated results:</h2>
+            <Results formState={formState} />
           </div>
         </Form>
       </BonusFormContext.Provider>
