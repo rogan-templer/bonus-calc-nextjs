@@ -8,7 +8,8 @@ export function TotalCalls({ dispatch, formState }) {
   const [totalCallsTarget, setTotalCallsTarget] = useState('');
 
   const addTotalCallsData = () => {
-    dispatch({type: DISPATCH_ACTION.totalCalls, payload: [...formState.totalCalls, { totalCallsKpi: totalCallsKpi, totalCallsTarget: totalCallsTarget }]})
+    dispatch({type: DISPATCH_ACTION.addTotalCallsKpi, payload: { totalCallsKpi: totalCallsKpi }})
+    dispatch({type: DISPATCH_ACTION.addTotalCallsTarget, payload: { totalCallsTarget: totalCallsTarget }})
     setTotalCallsKpi('');
     setTotalCallsTarget('');
   }
@@ -38,6 +39,11 @@ export function TotalCalls({ dispatch, formState }) {
       </Form.Field>
         <div>
           <Button type='button' onClick={addTotalCallsData}>Submit</Button>
+        </div>
+        <div>
+          <p>Entered in values:</p>
+          <p>KPI achieved: {formState.totalCallsKpi}</p>
+          <p>Target achieved: {formState.totalCallsTarget}</p>
         </div>
     </div>
   );

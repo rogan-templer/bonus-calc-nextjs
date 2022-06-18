@@ -8,7 +8,8 @@ export function Sales({ dispatch, formState }) {
   const [salesTarget, setSalesTarget] = useState('');
 
   const addSalesData = () => {
-    dispatch({type: DISPATCH_ACTION.sales, payload: [...formState.sales, { salesKpi: salesKpi, salesTarget: salesTarget }]})
+    dispatch({type: DISPATCH_ACTION.addSalesKpi, payload: { salesKpi: salesKpi }})
+    dispatch({type: DISPATCH_ACTION.addSalesTarget, payload: { salesTarget: salesTarget }})
     setSalesKpi('');
     setSalesTarget('');
   }
@@ -38,6 +39,11 @@ export function Sales({ dispatch, formState }) {
       </Form.Field>
         <div>
           <Button type='button' onClick={addSalesData}>Submit</Button>
+        </div>
+        <div>
+          <p>Entered in values:</p>
+          <p>KPI achieved: {formState.salesKpi}</p>
+          <p>Target achieved: {formState.salesTarget}</p>
         </div>
     </div>
   );

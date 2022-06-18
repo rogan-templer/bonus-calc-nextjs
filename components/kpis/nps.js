@@ -8,7 +8,8 @@ export function Nps({ dispatch, formState }) {
   const [npsTarget, setNpsTarget] = useState('');
 
   const addNpsData = () => {
-    dispatch({type: DISPATCH_ACTION.nps, payload: [...formState.nps, { npsKpi: npsKpi, npsTarget: npsTarget }]})
+    dispatch({type: DISPATCH_ACTION.addNpsKpi, payload: { npsKpi: npsKpi }})
+    dispatch({type: DISPATCH_ACTION.addNpsTarget, payload: { npsTarget: npsTarget }})
     setNpsKpi('');
     setNpsTarget('');
   }
@@ -38,6 +39,11 @@ export function Nps({ dispatch, formState }) {
       </Form.Field>
         <div>
           <Button type='button' onClick={addNpsData}>Submit</Button>
+        </div>
+        <div>
+          <p>Entered in values:</p>
+          <p>KPI achieved: {formState.npsKpi}</p>
+          <p>Target achieved: {formState.npsTarget}</p>
         </div>
     </div>
   );

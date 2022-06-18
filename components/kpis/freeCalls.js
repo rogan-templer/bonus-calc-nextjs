@@ -8,7 +8,8 @@ export function FreeCalls({ dispatch, formState }) {
   const [freeCallsTarget, setFreeCallsTarget] = useState('');
 
   const addFreeCallsData = () => {
-    dispatch({type: DISPATCH_ACTION.freeCalls, payload: [...formState.freeCalls, { freeCallsKpi: freeCallsKpi, freeCallsTarget: freeCallsTarget }]})
+    dispatch({type: DISPATCH_ACTION.addFreeCallsKpi, payload: { freeCallsKpi: freeCallsKpi }})
+    dispatch({type: DISPATCH_ACTION.addFreeCallsTarget, payload: { freeCallsTarget: freeCallsTarget }})
     setFreeCallsKpi('');
     setFreeCallsTarget('');
   }
@@ -38,6 +39,11 @@ export function FreeCalls({ dispatch, formState }) {
       </Form.Field>
         <div>
           <Button type='button' onClick={addFreeCallsData}>Submit</Button>
+        </div>
+        <div>
+          <p>Entered in values:</p>
+          <p>KPI achieved: {formState.freeCallsKpi}</p>
+          <p>Target achieved: {formState.freeCallsTarget}</p>
         </div>
     </div>
   );

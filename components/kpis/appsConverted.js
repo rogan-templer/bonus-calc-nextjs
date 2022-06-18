@@ -8,7 +8,8 @@ export function AppsConverted({ dispatch, formState }) {
   const [appsConvertedTarget, setAppsConvertedTarget] = useState('');
 
   const addAppsConvertedData = () => {
-    dispatch({type: DISPATCH_ACTION.appsConverted, payload: [...formState.appsConverted, { appsConvertedKpi: appsConvertedKpi, appsConvertedTarget: appsConvertedTarget }]})
+    dispatch({type: DISPATCH_ACTION.addAppsConvertedKpi, payload: { appsConvertedKpi: appsConvertedKpi }})
+    dispatch({type: DISPATCH_ACTION.addAppsConvertedTarget, payload: { appsConvertedTarget: appsConvertedTarget }})
     setAppsConvertedKpi('');
     setAppsConvertedTarget('');
   }
@@ -39,6 +40,11 @@ export function AppsConverted({ dispatch, formState }) {
       </Form.Field>
         <div>
           <Button type='button' onClick={addAppsConvertedData}>Submit</Button>
+        </div>
+        <div>
+          <p>Entered in values:</p>
+          <p>KPI achieved: {formState.appsConvertedKpi}</p>
+          <p>Target achieved: {formState.appsConvertedTarget}</p>
         </div>
     </div>
   );
