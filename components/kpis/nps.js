@@ -1,36 +1,44 @@
-import React from "react";
-import { Input } from "semantic-ui-react";
+import React, { useState } from "react";
+import { Button, Form, Input } from "semantic-ui-react";
 
 import { DISPATCH_ACTION } from "../constants";
 
-export function Nps({ dispatch }) {
+export function Nps({ dispatch, formState }) {
+  const [npsKpi, setNpsKpi] = useState('');
+  const [npsTarget, setNpsTarget] = useState('');
+
+  const addNpsData = () => {
+    dispatch({type: DISPATCH_ACTION.nps, payload: [...formState.nps, { npsKpi: npsKpi, npsTarget: npsTarget }]})
+    setNpsKpi('');
+    setNpsTarget('');
+  }
+
   return (
     <div className="col m-6">
       <div>
-        <h3>Net promoter score</h3>
+        <h3>Sales Targets</h3>
       </div>
-      <div>
+      <Form.Field>
+        <label>KPI achieved</label>
         <Input
+          name='npsKpi'
+          value={npsKpi}
           placeholder="Input achieved here"
-          onChange={(e, d) =>
-            dispatch({
-              type: DISPATCH_ACTION.addNpsKpi,
-              payload: { npsKpi: d.value },
-            })
-          }
+          onChange={(e, d) => setNpsKpi(d.value)}
         />
+      </Form.Field>  
+      <Form.Field>
+        <label>KPI target</label>
+        <Input
+          name='npsTarget'
+          value={npsTarget}
+          placeholder="Input target here"
+          onChange={(e, d) => setNpsTarget(d.value)}
+        />
+      </Form.Field>
         <div>
-          <Input
-            placeholder="Input target here"
-            onChange={(e, d) =>
-              dispatch({
-                type: DISPATCH_ACTION.addNpsTarget,
-                payload: { npsTarget: d.value },
-              })
-            }
-          />
+          <Button type='button' onClick={addNpsData}>Submit</Button>
         </div>
-      </div>
     </div>
   );
 }
