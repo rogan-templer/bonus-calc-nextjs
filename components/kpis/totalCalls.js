@@ -17,7 +17,7 @@ export function TotalCalls({ dispatch, formState }) {
   return (
     <div className="col m-6">
       <div>
-        <h3>Sales Targets</h3>
+        <h3>Total TotalCalls Targets</h3>
       </div>
       <Form.Field>
         <label>KPI achieved</label>
