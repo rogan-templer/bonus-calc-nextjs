@@ -16,7 +16,7 @@ export function AppsConverted({ dispatch, formState }) {
 
 
   return (
-    <div className="col m-6">
+    <div className="col m-6 tile">
       <div>
         <h3>Applications converted</h3>
       </div>

@@ -45,7 +45,7 @@ export function BonusCategoryLanding() {
             <AppsConverted formState={formState} dispatch={dispatch} />
             <Nps formState={formState} dispatch={dispatch} />
           </div>
-          <div>
+          <div className="grid">
             <h2>Consolidated results:</h2>
             <Results formState={formState} />
           </div>

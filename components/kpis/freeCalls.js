@@ -15,7 +15,7 @@ export function FreeCalls({ dispatch, formState }) {
   }
 
   return (
-    <div className="col m-6">
+    <div className="col m-6 tile">
       <div>
         <h3>Call availability</h3>
       </div>

@@ -15,7 +15,7 @@ export function Nps({ dispatch, formState }) {
   }
 
   return (
-    <div className="col m-6">
+    <div className="col m-6 tile">
       <div>
         <h3>NPS Targets</h3>
       </div>

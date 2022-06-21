@@ -1,3 +1,4 @@
+import { isNaN } from "lodash";
 import React from "react";
 import { Button } from "semantic-ui-react";
 
@@ -12,15 +13,13 @@ export function Results({ formState }) {
 
   const overallResult = (salesResult + appsConvertedResult + freeCallsResult + npsResult + totalCallsResult) * 100;
 
- 
+  console.log(overallResult);
 
   return (
-    <>
-    {/* <Button onClick={handleCalculate}>Calculate</Button> */}
+    <div className="col m-12">
       <h2>Results section</h2>
-
-      <h4>{Math.floor(overallResult)}%</h4>
+      <h4>{isNaN(overallResult) ? '' : Math.floor(overallResult)}%</h4>
       <Button onClick={() => window.location.reload()}>Reset</Button>
-    </>
+    </div>
   );
 }
