@@ -32,20 +32,20 @@ export function BonusCategoryLanding() {
 
   return (
     <>
-      <h2>Here is the calculator</h2>
+      <h2 className="text-align">Here is the calculator</h2>
       <BonusFormContext.Provider value={formState}>
-        {console.log(formState)}
         <Form>
-          <div className="grid">
-            <Sales formState={formState} dispatch={dispatch} />
-            <FreeCalls formState={formState} dispatch={dispatch} />
-            <TotalCalls formState={formState} dispatch={dispatch} />
-            <AppsConverted formState={formState} dispatch={dispatch} />
-            <Nps formState={formState} dispatch={dispatch} />
-          </div>
-          <div className="grid">
-            <h2>Consolidated results:</h2>
-            <Results formState={formState} />
+          <div className="box">
+            <div className="grid">
+              <Sales formState={formState} dispatch={dispatch} />
+              <FreeCalls formState={formState} dispatch={dispatch} />
+              <TotalCalls formState={formState} dispatch={dispatch} />
+              <AppsConverted formState={formState} dispatch={dispatch} />
+              <Nps formState={formState} dispatch={dispatch} />
+            </div>
+            <div className="grid">
+              <Results formState={formState} />
+            </div>
           </div>
         </Form>
       </BonusFormContext.Provider>

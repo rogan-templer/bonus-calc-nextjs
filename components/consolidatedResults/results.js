@@ -13,13 +13,14 @@ export function Results({ formState }) {
 
   const overallResult = (salesResult + appsConvertedResult + freeCallsResult + npsResult + totalCallsResult) * 100;
 
-  console.log(overallResult);
-
   return (
-    <div className="col m-12">
+    <div className="col m-12 results-section">
+      <h2>Consolidated results:</h2>
       <h2>Results section</h2>
       <h4>{isNaN(overallResult) ? '' : Math.floor(overallResult)}%</h4>
-      <Button onClick={() => window.location.reload()}>Reset</Button>
+      <span>
+        <Button onClick={() => window.location.reload()}>Reset</Button>
+      </span>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>this is where the body of the app will be</h1>
+        <h1 className="text-align">this is where the body of the app will be</h1>
         <>
           <BonusCategoryLanding />
         </>
