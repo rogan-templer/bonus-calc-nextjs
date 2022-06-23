@@ -28,3 +28,7 @@ a {
 .pad-top-15px {
   padding-top: 15px;
 }
+
+.tile {
+  width: 250px
+}
