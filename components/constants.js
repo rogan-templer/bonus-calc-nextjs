@@ -1,9 +1,4 @@
 export const DISPATCH_ACTION = {
-  // sales: 'sales',
-  // totalCalls: 'total calls',
-  // freeCalls: 'free calls',
-  // appsConverted: 'appsConverted',
-  // nps: 'nps', 
   addSalesTarget: "add sales target",
   addSalesKpi: "add sales kpi",
   addTotalCallsTarget: "add total calls target",
